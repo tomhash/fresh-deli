@@ -1,0 +1,49 @@
+.account-page .account-page__inner {
+  width: 900px;
+  margin: 190px auto;
+  padding: 60px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.account-page .account-page__inner .account-page__inner--right {
+  float: left;
+  width: 100%;
+}
+.account-page .account-page__inner:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+
+
+
+.account-page .field {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.account-page .field .field-label {
+  padding: 10px 0;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 200;
+}
+.account-page .field .field-label i {
+  font-size: 11px;
+}
+
+
+.account-page input[type=submit] {
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(243, 235, 235);
+  background-color: black;
+  font-style:"ヒラギノ丸ゴ ProN", monospace;
+  width:100px
+  
+}
+.link {
+  text-align: center;
+ 
+}
