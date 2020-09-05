@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Fresh delivery</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+   <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  <%= javascript_pack_tag 'application' %>
+</head>
+
+<%= form_with model: @user, url: user_session_path,class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+  <%= link_to 'Fresh Delivery',root_path,  class: "sign-top"  %>
+    <h1 class='form-header-text'>
+      会員情報入力
+    </h1>
+  </div>
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">メールアドレス</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">パスワード</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
+  </div>
+  <div class='login-btn'>
+    <%= f.submit "ログイン" ,class:"login-white-btn" %>
+  </div>
+</div>
+<% end %>
+
+
+</html>
