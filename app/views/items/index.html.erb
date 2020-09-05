@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Fresh delivery</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="right-header">
+          <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+           <%= link_to current_user.nickname,"/users/#{current_user.id}", class: "user-nickname"  %>
+           <%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: "logout"  %>
+          </div>
+        <% else %>
+        <div class=" grid-6">
+            <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+            <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+          </div>
+        <% end %>
+        
+        </div>
+      </div>
+    </header>
+    
+    <div class="top-wrapper">
+      <div class="container">
+       <h1>Fresh Delivery</h1>
+       <div class="top-view">
+         <h2>Enjoy VEGITABLE!</h2>
+         <p>フレデリは、全国の農家が出店するネット上の市場です。<br>
+            生産者が誰でも簡単に出品でき、且つお客様にも適正価格でお野菜を購入できることをお約束します。
+         </p>
+       </div>
+      </div> 
+    </div>
+    
+    <div class='item-contents'>
+    <h2 class='title'>New Items</h2>
+    <%= link_to 'トレタテ', "#", class: "subtitle" %>
+    <ul class='item-lists'>
+      <% @items.each do |item|%>
+      <li class='list'>
+        <div class= farmer>     
+        <span>生産者 <%= item.user.nickname %> <%= item.ship_from.name %>産</span>
+        </div>
+        <%= link_to item_path(item.id) do %>
+        <div class='item-img-content'>
+          <%=  image_tag item.image, class: 'item-img' if item.image.attached? %>
+           <%if item.buyer%>
+              <div class='sold-out'>
+                <span>入荷待ち</span>
+              </div>
+            <%end%>
+        </div>
+        
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= item.name %>
+          </h3>
+          <div class='item-price'>
+            <%= item.price %>円 (税込み) <br>
+            <%= item.shipping_type.name %> 
+            <%# <div class='star-btn'>
+              <%= image_tag "", class:"star-icon" %>
+              <%# <span class='star-count'>0</span>
+            </div> %>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <%end%>
+    </ul>
+  </div>
+   <div class='footer-btn'>
+   <div class='message-btn'>
+     <span class='purchase-btn-text'>トーク</span>
+      <%= link_to root_path do %>
+       <%= image_tag '会話アイコン.png' , size: '110x50' ,class: "purchase-btn-icon" %>
+     <% end %>
+    </div>
+  
+    <div class='purchase-btn'>
+     <span class='purchase-btn-text'>出品する</span>
+      <%= link_to new_item_path do %>
+       <%= image_tag 'camera.png' , size: '110x50' ,class: "purchase-btn-icon" %>
+     <% end %>
+     </div>
+   </div>
+  <footer>
+    <div class="footer-container">
+       <h4>Fresh Delivery</h4>
+       <p>農業の明るい未来へ</p>
+   </div>
+   
+ </footer>
+
+   
+  </body>
+</html>

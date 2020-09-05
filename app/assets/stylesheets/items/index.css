@@ -1,0 +1,245 @@
+header{
+  position:fixed;
+  top:0;
+  z-index:10;
+  background-color: white;
+  height:65px;
+  width:100%;
+  border-bottom:1px solid rgb(126, 123, 123);
+}
+.container{
+  width:1170px;
+  margin:0 auto;  
+   
+ }
+ .right-header{
+  float:right;
+  display:inline;
+  margin-right: 60px;
+  font-size:15px;
+}
+ 
+
+
+.top-wrapper{
+  
+  padding-top:180px;
+  padding-bottom:100px;
+  color:white;
+  text-align:center;
+}
+.top-wrapper h1{
+  font-size:40px;
+  color:rgb(126, 123, 123);
+  margin-bottom:180px;
+  font-family: 'Ubuntu Mono', monospace;
+  
+  
+}
+.top-view h2{
+  font-size: 45px;
+  color:white;
+  float:left;
+  padding-left:20px;
+  margin-top:100px;
+  margin-bottom:50px;
+  
+  font-family: 'Ubuntu Mono', monospace;
+  
+}
+.top-view p{
+  font-size: 23px;
+  color:white;
+  float:left;
+  padding-left:60px;
+  margin-bottom:40px;
+  
+}
+.top-view{
+  background-image:url(https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+  padding-top:180px;
+  padding-bottom:100px;
+  height:400px;
+  background-size:cover;
+  opacity:0.9;
+}
+.item-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+  
+}
+
+.item-contents>.title {
+  font-size: 40px;
+  line-height: 1.4;
+  font-family: 'Ubuntu Mono', monospace;
+  color:rgb(126, 123, 123);
+
+}
+
+.item-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color:rgb(221, 162, 34);
+  font-weight: bold;
+  font-family: "ヒラギノ丸ゴ ProN", monospace;
+}
+
+.item-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+  text-align: center;
+}
+.farmer{
+  font-size:16px;
+  padding-bottom:7px;
+  
+}
+
+.item-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+  border-radius: 4%;
+}
+
+.sold-out {
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  width: 40vh;
+  text-align: center;
+  background-color: rgb(51, 110, 71);
+  font-family: "ヒラギノ丸ゴ ProN", monospace;
+  
+}
+
+.sold-out>span {
+  color: #FFF;
+  font-size: 30px;
+  
+}
+
+
+.item-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+  
+}
+
+.item-name {
+  font-size: 2.0vh;
+  font-family: "ヒラギノ丸ゴ ProN", monospace;
+}
+
+.item-price {
+  font-size: 1.3vh;
+  display: flex;
+  justify-content: space-between;
+  font-family: "ヒラギノ丸ゴ ProN", monospace;
+  text-align:start;
+  margin-top:10px
+}
+
+
+.star-btn {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+}
+
+.star-count {
+  font-size: 2vh;
+}
+.footer-btn {
+  width: 100px;
+  background: #e2d0cc;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  float:right;
+  padding:15px;
+  margin:60px 0px 60px 0px ;
+  position:fixed;
+
+  
+ 
+}
+.message-btn{
+  padding-bottom: 30px;
+}
+
+.purchase-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.purchase-btn-icon {
+  width: 50%;
+}
+
+.footer-container{
+  border-top:1px solid rgb(126, 123, 123);
+  color:rgb(126, 123, 123);
+  padding:15px;
+  
+
+}
+
+footer p{
+  font-size:12px;
+  
+}
+footer h4{
+  font-size:20px
+}
+
+.user-nickname {
+  text-decoration: none;
+  line-height:60px;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+.login {
+  text-decoration: none;
+  line-height: 60px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
