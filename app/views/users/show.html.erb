@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Fresh delivery</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    
+  </head>
+  <body>
+<header>
+   <div class="container">
+        <div class="right-header">
+          <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+           <%= link_to current_user.nickname, "#", class: "user-nickname"  %>
+           <%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: "logout"  %>
+          </div>
+        <% else %>
+        <div class=" grid-6">
+            <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+            <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+</header>   
+<div class="item-show">
+  <div class="item-box">
+   <p><%= @nickname%>さんのマイページ</p> 
+    <% if user_signed_in? && @user == current_user %>
+    <div class = link>
+      <%= link_to "プロフィール編集", edit_user_path(current_user) %>
+     </div> 
+    <% else %>
+      <%= link_to root_path %>
+    <% end %>
+   <ul class='item-lists'>
+      <% @items.each do |item|%>
+      <li class='list'>
+        <%= link_to item_path(item.id) do %>
+        <div class='item-img-content'>
+          <%=  image_tag item.image, class: 'item-img' %>
+        </div>
+        <%end%>
+      </li>
+      <%end%>
+   </ul>
+  </div>
+   <div class="comment-box">   
+        <div class="link">
+          <a href="/">TOPページへ戻る</a>
+        </div>
+   </div>
+ </body>
+</html>
+  
+ 
