@@ -1,0 +1,115 @@
+
+header{
+  border-bottom:1px solid rgb(126, 123, 123);
+}
+.item-show {
+  background-color: white;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+.item-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+  border-radius: 4%;
+}
+
+
+
+.item-box {
+  background-color:white;
+  width: 60vw;
+  min-width: 700px;
+  padding: 10vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "ヒラギノ丸ゴ ProN", monospace;
+}
+.item-box p{
+font-size:25px;
+margin-bottom:30px;
+}
+.item-box>.name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  
+}
+.link{
+  margin-bottom:40px;
+}
+
+.item-box-img {
+  height: 33vh;
+  width: 33vw;
+  min-height: 500px;
+  background-color: white;
+  object-fit: contain;
+  
+}
+
+.item-price-box {
+  margin: 25px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.item-price-box>.item-price {
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.item-price-box>.item-postage {
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.comment-box {
+  width: 35vw;
+  background-color: #fff;
+  margin: 5vh 0;
+  text-align: center;
+}
+
+
+
+
+
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+
+}
+
+
+
+
+
+.link a{
+  font-size:15px;
+ text-decoration: none;
+  color:#e2d0cc;
+  
+}
