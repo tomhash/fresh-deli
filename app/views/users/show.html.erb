@@ -30,7 +30,7 @@
    <p><%= @nickname%>さんのマイページ</p> 
     <% if user_signed_in? && @user == current_user %>
     <div class = link>
-      <%= link_to "プロフィール編集", edit_user_path(current_user) %>
+      <%= link_to "ユーザー情報編集", edit_user_path(current_user) %>
      </div> 
     <% else %>
       <%= link_to root_path %>
