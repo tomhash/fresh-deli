@@ -1,0 +1,47 @@
+<div class= "wrapper">
+  <div class= "top-chat">
+  <div class="left-header">
+  <%= link_to 'Fresh Delivery',root_path,  class: "sign-top" %>
+      <div class="header-title">
+        <h3>CHAT FARM</h3>
+      </div>
+      <p>チャットファームへようこそ。<br>
+      チャットファームは生産者様同士で農業について語りあえる場です<br>
+      農業経験はないが、これから農業をやってみたい方も農家の方々からの<br>
+      アドバイスをもらえるチャンスですので是非活用してみてください。<
+  </div>
+  
+ <div class= "main-chat">
+  <div class="form-area">
+    <div class="form-inline">
+      <%= form_with model: @message do |f| %>
+        <%= f.text_field :text, class: "form_control"%>
+        <%= f.submit 'SEND' , class: "btn btn-primary"%>
+      
+      <% end %>
+    </div>
+
+
+  <div class="message">
+    
+    <div class="lower-message">
+      <div class="message-content">
+      
+      
+        <div id='messages'>
+          <% @messages.reverse_each do |message| %>
+            <p><%= message.created_at %></p>
+            <p><%= message.text %></p>
+
+          <% end %>
+        </div>
+     </div>
+
+   </div>
+
+ </div>
+ 
+</div>
+
+</div>
+

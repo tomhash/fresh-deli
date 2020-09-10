@@ -50,11 +50,12 @@
         </div>
         <%= link_to item_path(item.id) do %>
         <div class='item-img-content'>
-          <%=  image_tag item.image, class: 'item-img' if item.image.attached? %>
            <%if item.buyer%>
-              <div class='sold-out'>
-                <span>入荷待ち</span>
-              </div>
+                <%= image_tag '閉店時間のアイコン2.png'  ,class: "sold-out-icon" %>
+              <%else%> 
+          <%=  image_tag item.image, class: 'item-img' if item.image.attached? %>
+          
+           
             <%end%>
         </div>
         
@@ -79,9 +80,15 @@
    <div class='footer-btn'>
    <div class='message-btn'>
      <span class='purchase-btn-text'>トーク</span>
-      <%= link_to root_path do %>
+      <% if user_signed_in? %>
+      <%= link_to messages_path do %>
        <%= image_tag '会話アイコン.png' , size: '110x50' ,class: "purchase-btn-icon" %>
      <% end %>
+     <% else %>
+     <%= link_to new_user_session_path do %>
+       <%= image_tag '会話アイコン.png' , size: '110x50' ,class: "purchase-btn-icon" %>
+       <% end %>
+        <% end %>
     </div>
   
     <div class='purchase-btn'>
