@@ -18,14 +18,17 @@
 <div class="item-show">
   <div class="item-box">
     <h2 class="name">
-      <%= @item.name%>
+      <%= @item.name%><br>
+       <span>生産者 <%= @item.user.nickname %> <%= @item.ship_from.name %>産</span>
     </h2>
     <div class='item-img-content'>
-      <%=  image_tag @item.image, class: 'item-img' if @item.image.attached? %>
-      <div class='sold-out'>
-        <span>入荷待ち</span>
-      </div>
-      <%# / %>
+     <%if @item.buyer%>
+                <%= image_tag '閉店時間のアイコン2.png'  ,class: "sold-out-icon" %>
+              <%else%> 
+          <%= image_tag @item.image, class: 'item-img' if @item.image.attached? %>
+          
+           
+            <%end%>
     </div>
     <div class="item-price-box">
       <span class="item-price">
@@ -45,10 +48,11 @@
         <p class='or-text'>or</p>
         <%= link_to '削除', item_path(@item.id) , method: :delete, class:'item-destroy' %>
      <% end %>
-      
+      <%if @item.buyer%>
+      <%end%>
       <%if user_signed_in? && current_user.id != @item.user_id && @item.buyer == nil %>
-        <%= link_to '購入画面に進む',"#",class:"item-red-btn"%>
-    
+      
+        <%= link_to '購入画面に進む',item_transactions_path(@item.id),class:"item-red-btn"%>
       <% end %>
     
     <table class="detail-table">
@@ -89,7 +93,7 @@
    <div class="comment-box">
       <%if current_user %>
         <%=form_with(model: [@item, @comment], local: true) do |form|%>
-          <P>  商品についてだけでなく野菜の作り方などの質問もコメントしてみましょう</P>
+          <P>  商品についての質問、購入後の感想など生産者様にコメントしてみましょう</P>
           <%= form.text_area :text,  placeholder: "コメントする", rows: "2" ,size: "80x5"%>
           <%= form.submit "SEND" %>
 
